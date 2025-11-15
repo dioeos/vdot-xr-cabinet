@@ -1,0 +1,6 @@
+*.psd filter=lfs diff=lfs merge=lfs
+*.png filter=lfs diff=lfs merge=lfs
+*.fbx filter=lfs diff=lfs merge=lfs
+*.glb filter=lfs diff=lfs merge=lfs
+*.wav filter=lfs diff=lfs merge=lfs
+*.mp4 filter=lfs diff=lfs merge=lfs

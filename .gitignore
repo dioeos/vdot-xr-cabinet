@@ -1,0 +1,131 @@
+############################
+# Unity & General
+############################
+
+# OS
+.DS_Store
+Thumbs.db
+
+# User-specific Unity files
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.suo
+*.tmp
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity cache & generated files
+Library/
+obj/
+Temp/
+Logs/
+MemoryCaptures/
+UserSettings/
+Build/
+Builds/
+DerivedData/
+
+# Collab / Plastic / VSCode
+.vscode/
+.vs/
+.idea/
+*.code-workspace
+
+# Crash & profiling
+sysinfo.log
+*.stacktrace
+*.dmp
+
+############################
+# Unity Packages Exclusions
+############################
+# Unity package cache
+Packages/com.unity.polyspatial/Documentation~
+Packages/com.unity.polyspatial/Samples~/
+Packages/com.unity.xr.visionos/Documentation~
+Packages/com.unity.xr.visionos/Samples~/
+
+# Unity Package Manager downloads
+npm-debug.log*
+yarn-error.log*
+
+############################
+# PolySpatial / visionOS
+############################
+
+# PolySpatial build output
+PolySpatialGenerated/
+PolySpatialTemp/
+PolySpatialBuildCache/
+
+# visionOS specific build folders
+# (Xcode creates these when building for visionOS)
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+DerivedData/
+*.ipa
+*.app
+*.aab
+*.apk
+
+# Simulator build output
+visionOSSimulator/
+visionOSDeviceBuild/
+Build/visionOS*/
+
+############################
+# Build Artifacts (general)
+############################
+# Unity Cloud Build / local builds
+Builds/
+ExportedObj/
+BuildPlayer-* 
+*.apk
+*.aab
+*.ipa
+*.app
+
+############################
+# Render pipeline caches
+############################
+# URP / HDRP / Shader caches
+ShaderCache/
+*.shadergraph.meta
+*.shadergraph.importsettings
+
+############################
+# Unity Addressables
+############################
+# Addressables cache
+Library/com.unity.addressables/
+Assets/AddressableAssetsData/*/asset.dat
+
+############################
+# Generated meta-data
+############################
+# Prevent accidental meta conflicts
+**/*.orig
+*.merge-file
+*.orig.meta
+
+############################
+# Ignore app temp data
+############################
+/CapturedImages/
+/Recordings/
+/ScreenCaptures/
+
+# KEEP these folders—do NOT ignore:
+!Assets/
+!Packages/
+!ProjectSettings/
+!Packages/manifest.json
+!Packages/packages-lock.json
