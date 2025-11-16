@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: VisionOSSettings
   m_EditorClassIdentifier: Unity.XR.VisionOS.Editor::UnityEditor.XR.VisionOS.VisionOSSettings
   m_AppMode: 1
-  m_HandsTrackingUsageDescription: Input
-  m_WorldSensingUsageDescription: MR
-  m_RuntimeSettings: {fileID: 11400000, guid: c965634ca8f3b7e43b74edccc63591c4, type: 2}
+  m_HandsTrackingUsageDescription: Hands
+  m_WorldSensingUsageDescription: World
+  m_RuntimeSettings: {fileID: 11400000, guid: 58f5a94a2614542ec99955e2ca89bf50, type: 2}
   m_UpperLimbVisibility: 0
   m_HighQualityRecordingMode: 0
   m_FoveatedRendering: 1
@@ -23,5 +23,5 @@ MonoBehaviour:
   m_RealityKitImmersionStyle: 0
   m_MetalImmersiveOverlays: 0
   m_RealityKitImmersiveOverlays: 0
-  m_IL2CPPLargeExeWorkaround: 0
+  m_IL2CPPLargeExeWorkaround: 1
   m_UseACTool: 0
