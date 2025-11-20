@@ -6,9 +6,10 @@
 .DS_Store
 Thumbs.db
 
-# User-specific Unity files
+# User-specific Unity files 
 *.csproj
 *.sln
+*.slnx
 *.user
 *.unityproj
 *.pidb
@@ -129,3 +130,5 @@ Assets/AddressableAssetsData/*/asset.dat
 !ProjectSettings/
 !Packages/manifest.json
 !Packages/packages-lock.json
+
+mono_crash.*.json
