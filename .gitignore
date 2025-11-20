@@ -20,6 +20,7 @@ Thumbs.db
 *.mdb
 *.opendb
 *.VC.db
+*.vsconfig
 
 # Unity cache & generated files
 Library/
