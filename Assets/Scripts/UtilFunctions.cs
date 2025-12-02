@@ -1,0 +1,9 @@
+using UnityEngine;
+
+public static class UtilFunctions {
+  public static UnityEngine.XR.Interaction.Toolkit.Interactables
+      .XRGrabInteractable GetXRGrab(Component component) {
+    return component.GetComponent<
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+  }
+}
