@@ -3,19 +3,19 @@ using UnityEngine;
 public class ToggleCanvas : MonoBehaviour {
   [TextArea]
   public string infoText;
-  public UIController popup;
+  public SpatialUIController spatialUI;
 
   public void ShowPopup() {
     Debug.Log("ShowPopup called on: " + gameObject.name);
-    if (popup != null)
-      popup.Show(infoText);
+    if (spatialUI != null)
+      spatialUI.Show();
     else
       Debug.LogWarning("PopupUIController reference is missing on: " +
                        gameObject.name);
   }
 
   public void HidePopup() {
-    if (popup != null)
-      popup.Hide();
+    if (spatialUI != null)
+      spatialUI.Hide();
   }
 }

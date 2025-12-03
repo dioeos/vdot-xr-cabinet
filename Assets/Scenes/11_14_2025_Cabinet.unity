@@ -20755,13 +20755,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1736724074}
   - component: {fileID: 1736724073}
+  - component: {fileID: 1736724075}
   m_Layer: 0
   m_Name: GlobalSpatialUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1736724073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20784,8 +20785,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736724072}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.495, y: 1.362, z: 2.82}
+  m_LocalRotation: {x: -0, y: 0.37457985, z: -0, w: 0.92719465}
+  m_LocalPosition: {x: 1.998, y: 1.362, z: 1.647}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -20793,7 +20794,20 @@ Transform:
   - {fileID: 767957287}
   - {fileID: 467187462}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 43.997, z: 0}
+--- !u!114 &1736724075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736724072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fbd31310a5a7a4b89b65420fde5ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpatialUIController
+  SpatialUI: {fileID: 1736724072}
 --- !u!43 &1772783445
 Mesh:
   m_ObjectHideFlags: 0
@@ -92981,15 +92995,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 637456086751305837, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.291
+      value: -0.0541
       objectReference: {fileID: 0}
     - target: {fileID: 637456086751305837, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.60677
+      value: 1.631
       objectReference: {fileID: 0}
     - target: {fileID: 637456086751305837, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0954
+      value: 2.1652
       objectReference: {fileID: 0}
     - target: {fileID: 637456086751305837, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93023,13 +93037,17 @@ PrefabInstance:
       propertyPath: popup
       value: 
       objectReference: {fileID: 1498039867}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: spatialUI
+      value: 
+      objectReference: {fileID: 1736724075}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable
       objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -122625,7 +122643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleCanvas
   infoText: Hello, World!
-  popup: {fileID: 1498039867}
+  spatialUI: {fileID: 0}
 --- !u!114 &6113144839692175929
 MonoBehaviour:
   m_ObjectHideFlags: 0
