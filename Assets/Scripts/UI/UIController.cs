@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class PopupUIController : MonoBehaviour {
+public class UIController : MonoBehaviour {
 
   [SerializeField]
   private GameObject plane;

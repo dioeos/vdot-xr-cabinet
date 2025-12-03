@@ -165,9 +165,9 @@ GameObject:
   - component: {fileID: 8555014341426507138}
   - component: {fileID: 3450897042550730267}
   - component: {fileID: 2525421141999683003}
-  - component: {fileID: 8261869013166635040}
   - component: {fileID: 6745354195858326322}
   - component: {fileID: 3042628973850353713}
+  - component: {fileID: 5106679880532114771}
   m_Layer: 0
   m_Name: BatteryPackInteractable
   m_TagString: Untagged
@@ -433,19 +433,6 @@ MonoBehaviour:
   m_IntensityMultiplier: 1
   m_FadeInDuration: 0
   m_FadeOutDuration: 0
---- !u!114 &8261869013166635040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428454559636464366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd11a3b9922194d31981e0658f7d6bf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SmoothReturnToOrigin
-  returnSpeed: 1.5
 --- !u!114 &6745354195858326322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +460,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToggleCanvas
   infoText: First Interactable Prefab
   popup: {fileID: 0}
+--- !u!114 &5106679880532114771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428454559636464366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0890a0b86d68241b1e9e1cf220a1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmoothReturnToOrigin
+  returnSpeed: 1.5
 --- !u!1 &6806619730048952955
 GameObject:
   m_ObjectHideFlags: 0

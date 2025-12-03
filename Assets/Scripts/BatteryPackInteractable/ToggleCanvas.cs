@@ -3,8 +3,7 @@ using UnityEngine;
 public class ToggleCanvas : MonoBehaviour {
   [TextArea]
   public string infoText;
-
-  public PopupUIController popup;
+  public UIController popup;
 
   public void ShowPopup() {
     Debug.Log("ShowPopup called on: " + gameObject.name);

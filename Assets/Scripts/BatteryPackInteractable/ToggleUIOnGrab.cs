@@ -3,14 +3,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 [RequireComponent(typeof(XRGrabInteractable))]
-public class TogglePopupOnGrab : MonoBehaviour {
+public class ToggleUIOnGrab : MonoBehaviour {
+
   [SerializeField]
   private ToggleCanvas toggleCanvas;
-
-  private XRGrabInteractable grab;
+  private XRGrabInteractable xrGrab;
 
   private void Awake() {
-    grab = UtilFunctions.GetXRGrab(this);
+    xrGrab = Util.GetXRGrab(this);
 
     // Auto-find ToggleCanvas if not assigned
     if (toggleCanvas == null) {
@@ -19,13 +19,14 @@ public class TogglePopupOnGrab : MonoBehaviour {
   }
 
   private void OnEnable() {
-    grab.selectEntered.AddListener(OnGrab);
-    grab.selectExited.AddListener(OnRelease);
+    xrGrab.selectEntered.AddListener(OnGrab);
+    xrGrab.selectExited.AddListener(OnRelease);
   }
 
   private void OnDisable() {
-    grab.selectEntered.RemoveListener(OnGrab);
-    grab.selectExited.RemoveListener(OnRelease);
+    /// listeners cleanly removed when object is disabled
+    xrGrab.selectEntered.RemoveListener(OnGrab);
+    xrGrab.selectExited.RemoveListener(OnRelease);
   }
 
   private void OnGrab(SelectEnterEventArgs args) {
