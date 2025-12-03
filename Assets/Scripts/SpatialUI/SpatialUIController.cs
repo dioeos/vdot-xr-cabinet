@@ -4,6 +4,8 @@ using TMPro;
 public class SpatialUIController : MonoBehaviour {
   [SerializeField]
   private GameObject SpatialUI;
+
+  [SerializeField]
   private TextMeshPro contentSection;
 
   void Start() { Hide(); }
