@@ -38,7 +38,7 @@ public class ToggleUIOnGrab : MonoBehaviour {
   }
 
   private void OnRelease(SelectExitEventArgs args) {
-    if (toggleCanvas != null)
-      toggleCanvas.HidePopup();
+    // if (toggleCanvas != null)
+    //   toggleCanvas.HidePopup();
   }
 }
