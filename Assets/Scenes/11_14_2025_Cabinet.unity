@@ -8758,6 +8758,10 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card is responsible for the red lights specifically
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (2)
@@ -13789,6 +13793,10 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card powers the arrow signals.
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (5)
@@ -15433,6 +15441,10 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card is responsible for the traffic lights control.
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (1)
@@ -16577,6 +16589,10 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card is responsible for the yellow lights.
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (3)
@@ -21266,6 +21282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpatialUIController
   SpatialUI: {fileID: 1736724072}
+  contentSection: {fileID: 202554792}
 --- !u!1001 &1744152208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21322,6 +21339,11 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card is critical and needs to be replaced every week or else system
+        shuts down.
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (6)
@@ -21961,6 +21983,10 @@ PrefabInstance:
       propertyPath: spatialUI
       value: 
       objectReference: {fileID: 1736724075}
+    - target: {fileID: 3042628973850353713, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
+      propertyPath: contentMessage
+      value: This card is responsible for the green lights.
+      objectReference: {fileID: 0}
     - target: {fileID: 5428454559636464366, guid: 5c7a2abade796ca4d9ef1fdcbdabdde5, type: 3}
       propertyPath: m_Name
       value: BatteryPackInteractable (4)
