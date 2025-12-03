@@ -89,6 +89,108 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2373368106387611905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5652281016015481039}
+  - component: {fileID: 8180512601786858756}
+  - component: {fileID: 5703063144930720674}
+  - component: {fileID: 7942197823004911209}
+  m_Layer: 0
+  m_Name: HighlightVisuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5652281016015481039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373368106387611905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.167, y: -0.032, z: 0.03}
+  m_LocalScale: {x: 0.109113194, y: 0.096838504, z: -0.14615113}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 637456086751305837}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &8180512601786858756
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373368106387611905}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 02817d9fd5278674d843323710c17e16, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &5703063144930720674
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373368106387611905}
+  m_Mesh: {fileID: 561726918514808017, guid: b6c6d135f600b414aba81a1ee2a130af, type: 3}
+--- !u!114 &7942197823004911209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373368106387611905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390a719549c17634bbfdbfba2c2141d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightVisualsPositionController
 --- !u!1 &4546823421112680699
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +270,7 @@ GameObject:
   - component: {fileID: 6745354195858326322}
   - component: {fileID: 3042628973850353713}
   - component: {fileID: 5106679880532114771}
+  - component: {fileID: 743293378985070099}
   m_Layer: 0
   m_Name: BatteryPackInteractable
   m_TagString: Untagged
@@ -191,6 +294,7 @@ Transform:
   - {fileID: 4347056816515026551}
   - {fileID: 9032535493111651506}
   - {fileID: 1287100483843313431}
+  - {fileID: 5652281016015481039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2053264733261366358
@@ -458,8 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed492c8c4fee6647bd9bee0001f4683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToggleCanvas
-  infoText: First Interactable Prefab
-  popup: {fileID: 0}
+  contentMessage: 
+  spatialUI: {fileID: 0}
 --- !u!114 &5106679880532114771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +577,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmoothReturnToOrigin
   returnSpeed: 1.5
+--- !u!114 &743293378985070099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428454559636464366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f4c36c6d0cae04ab67223b0d13e890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabHighlight
+  highlightMesh: {fileID: 2373368106387611905}
 --- !u!1 &6806619730048952955
 GameObject:
   m_ObjectHideFlags: 0
