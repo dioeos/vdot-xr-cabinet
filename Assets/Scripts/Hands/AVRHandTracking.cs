@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR.Hands;
+using UnityEngine.XR.Management;
+using System.Collections.Generic;
 
 public class CustomAVRHandsVisualizer : MonoBehaviour {
 
-  /// used to iterate through subsystems and set m_HandSubsystem
+  float logInterval = 0.5f;
+  float nextLogTime = 0f; /// used to iterate through subsystems and set m_HandSubsystem
   static readonly List<XRHandSubsystem> s_SubsystemsReuse =
       new List<XRHandSubsystem>();
 
@@ -23,21 +26,25 @@ public class CustomAVRHandsVisualizer : MonoBehaviour {
 
       if (currHandSubsystem.running) {
         m_HandSubsystem = currHandSubsystem;
-        currHandSubsystem = true;
+	foundSubsystem = true;
         break;
       }
     }
   }
 
   void Update() {
-    if (handSubsystem == null || !handSubsystem.running)
+    if (m_HandSubsystem == null || !m_HandSubsystem.running) {
       Debug.Log("No handsubsystem");
-    return;
+      return;
+    }
+    if (Time.time < nextLogTime) {return;}
+    nextLogTime = Time.time + logInterval;
+    
 
-    XRHand left = handSubsystem.leftHand;
-    XRHand right = handSubsystem.rightHand;
+    XRHand left = m_HandSubsystem.leftHand;
+    XRHand right = m_HandSubsystem.rightHand;
 
-    Debug.Log($"[XRHandsDebugTest] running={handSubsystem.running}, " +
+    Debug.Log($"[XRHandsDebugTest] running={m_HandSubsystem.running}, " +
               $"leftTracked={left.isTracked}, rightTracked={right.isTracked}");
 
     // Try reading a joint pose — palm or index tip
