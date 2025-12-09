@@ -143,15 +143,17 @@ public class DrawerController : MonoBehaviour
 
   private void OpenDrawerOnPalmPose(Pose palmPose)
   {
+    // hands are tracked in world space, drawers slide in local
     float palmX = palmPose.position.x;
 
     // how much hand has moved along world x
     float palmDeltaX = palmX - palmStartOpenX;
-    HandLogger.Log($"==PALM DELTA== : {palmDeltaX}");
+    Debug.Log($"==PALM DELTA== : {palmDeltaX}");
 
-    if (palmDeltaX >= 0f)
+    // NOW: opening requires moving TOWARD you => X increasing => delta > 0
+    if (palmDeltaX <= 0f)
     {
-      HandLogger.LogWarning($"Cannot open in that direction");
+      Debug.LogWarning($"Cannot open in that direction");
       return;
     }
 
@@ -175,9 +177,10 @@ public class DrawerController : MonoBehaviour
     float palmX = palmPose.position.x;
     float palmDeltaX = palmX - palmStartCloseX;
 
-    if (palmDeltaX <= 0f)
+    // NOW: closing requires pushing AWAY from you => X decreasing => delta < 0
+    if (palmDeltaX >= 0f)
     {
-      HandLogger.LogWarning($"Cannot open in that direction");
+      Debug.LogWarning($"Cannot close in that direction");
       return;
     }
 
