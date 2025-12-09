@@ -100,8 +100,8 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
     XRHand leftHand = m_HandSubsystem.leftHand;
     XRHand rightHand = m_HandSubsystem.rightHand;
 
-    // LogJointData(leftHand, "[LEFT HAND]");
-    // LogJointData(rightHand, "[RIGHT HAND]");
+    //LogJointData(leftHand, "[LEFT HAND]");
+    LogJointData(rightHand, "[RIGHT HAND]");
   }
 
   void LogJointData(XRHand hand, string handLabel)
@@ -130,11 +130,14 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
                                             : m_HandSubsystem.rightHand;
 
     if (!xrHand.isTracked)
-      return false;
-
+        {
+            //Debug.Log("Hand is not tracked!!!!");
+        }
     // retrieve palmJoint via GetJoint(id) and determine pose
     var palmJoint = xrHand.GetJoint(XRHandJointID.Palm);
-    return palmJoint.TryGetPose(out pose);
+    var att = palmJoint.TryGetPose(out pose);
+    Debug.Log($"Here is POSE: {pose}");
+    return att;
   }
 
   public bool TryGetHand(Handedness hand, out XRHand xrHand)

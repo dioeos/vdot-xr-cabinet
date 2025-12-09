@@ -5043,7 +5043,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 631328012}
+  m_Mesh: {fileID: 1883585505}
 --- !u!33 &342425155
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -17129,7 +17129,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1089043707}
+  m_Mesh: {fileID: 1213511413}
 --- !u!33 &1064175639
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -19558,7 +19558,7 @@ MonoBehaviour:
   drawerCloseRegion: {fileID: 1748017939}
   openMovementScale: 1.8
   closeMovementScale: 1.8
-  drawerVisual: {fileID: 1126702580}
+  drawerVisual: {fileID: 954027336}
 --- !u!1 &1136538086
 GameObject:
   m_ObjectHideFlags: 0
@@ -23658,7 +23658,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2054272883}
+  m_Mesh: {fileID: 220672237}
 --- !u!33 &1415877559
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -29921,7 +29921,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 322926741}
+  m_Mesh: {fileID: 120462447}
 --- !u!33 &1793790476
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -32722,8 +32722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1779c07cf2844b899e375c1e98dba88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomAVRHandsVisualizer
-  logInterval: 0.5
-  nextLogTime: 0
 --- !u!1 &1919950697
 GameObject:
   m_ObjectHideFlags: 0

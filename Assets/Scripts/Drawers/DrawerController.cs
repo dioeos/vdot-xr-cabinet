@@ -48,6 +48,7 @@ public class DrawerController : MonoBehaviour
   {
     if (!d_handService.TryGetPalmPose(Handedness.Right, out var palmPose))
     {
+      //Debug.LogWarning("Cannot get right palm");
       return;
     }
 
@@ -55,6 +56,8 @@ public class DrawerController : MonoBehaviour
         d_handService.TryGetPalmPose(Handedness.Right, out var rightPalmPose);
     bool hasLeft =
         d_handService.TryGetPalmPose(Handedness.Left, out var leftPalmPose);
+
+    Debug.LogWarning($"hasRight: {hasRight}");
 
     bool rightInOpen =
         hasRight && drawerOpenRegion.bounds.Contains(rightPalmPose.position);
@@ -71,6 +74,7 @@ public class DrawerController : MonoBehaviour
         // decide drawer action - right hand takes priority, then left
         if (rightInOpen)
         {
+          Debug.Log("RIGHT IN OPEN");
           mode = DrawerMode.Opening;
           activeHand = Handedness.Right;
           BeginOpenInteraction(rightPalmPose);
