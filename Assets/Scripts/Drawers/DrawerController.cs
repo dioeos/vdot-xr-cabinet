@@ -21,14 +21,6 @@ public class DrawerController : MonoBehaviour
   [SerializeField]
   private float closeMovementScale = 1.8f;
 
-  // [Tooltip("The max z range to clamp opening the drawer")]
-  // [SerializeField]
-  // private float zOpenRange = 0f;
-  //
-  // [Tooltip("The max z range to clamp closing the drawer")]
-  // [SerializeField]
-  // private float zCloseRange = 0f;
-
   // USE CLAMP TO LIMIT RANGE
 
   [Tooltip("The transform of the drawer visuals")]
@@ -37,10 +29,12 @@ public class DrawerController : MonoBehaviour
 
   private DrawerMode mode = DrawerMode.None;
   private Handedness activeHand;
-  private float palmStartOpenZ;
-  private float drawerStartOpenZ;
-  private float palmStartCloseZ;
-  private float drawerStartCloseZ;
+
+  private float palmStartOpenX;
+  private float drawerStartOpenX;
+
+  private float palmStartCloseX;
+  private float drawerStartCloseX;
 
   private IHandTrackingService d_handService;
 
@@ -143,55 +137,54 @@ public class DrawerController : MonoBehaviour
 
   private void BeginOpenInteraction(Pose palmPose)
   {
-    palmStartOpenZ = palmPose.position.z;            // world z at grab
-    drawerStartOpenZ = drawerVisual.localPosition.z; // local z at grab
+    palmStartOpenX = palmPose.position.x;            // world x at grab
+    drawerStartOpenX = drawerVisual.localPosition.x; // local x at grab
   }
 
   private void OpenDrawerOnPalmPose(Pose palmPose)
   {
-    // hands are tracked in world space, drawers slide in local
-    float palmZ = palmPose.position.z;
+    float palmX = palmPose.position.x;
 
-    // how much hand has moved along world z
-    float palmDeltaZ = palmZ - palmStartOpenZ;
-    Debug.Log($"==PALM DELTA== : {palmDeltaZ}");
+    // how much hand has moved along world x
+    float palmDeltaX = palmX - palmStartOpenX;
+    HandLogger.Log($"==PALM DELTA== : {palmDeltaX}");
 
-    if (palmDeltaZ >= 0f)
+    if (palmDeltaX >= 0f)
     {
-      Debug.LogWarning($"Cannot open in that direction");
+      HandLogger.LogWarning($"Cannot open in that direction");
       return;
     }
 
-    // map delta into drawer local Z motion
-    float targetZ = drawerStartOpenZ + palmDeltaZ * openMovementScale;
+    // map delta into drawer local X motion
+    float targetX = drawerStartOpenX + palmDeltaX * openMovementScale;
 
     // apply to visuals
     Vector3 local = drawerVisual.localPosition;
-    local.z = targetZ;
+    local.x = targetX;
     drawerVisual.localPosition = local;
   }
 
   private void BeginCloseInteraction(Pose palmPose)
   {
-    palmStartCloseZ = palmPose.position.z;
-    drawerStartCloseZ = drawerVisual.localPosition.z;
+    palmStartCloseX = palmPose.position.x;
+    drawerStartCloseX = drawerVisual.localPosition.x;
   }
 
   private void CloseDrawerOnPalmPose(Pose palmPose)
   {
-    float palmZ = palmPose.position.z;
-    float palmDeltaZ = palmZ - palmStartCloseZ;
+    float palmX = palmPose.position.x;
+    float palmDeltaX = palmX - palmStartCloseX;
 
-    if (palmDeltaZ <= 0f)
+    if (palmDeltaX <= 0f)
     {
-      Debug.LogWarning($"Cannot open in that direction");
+      HandLogger.LogWarning($"Cannot open in that direction");
       return;
     }
 
-    float targetZ = drawerStartCloseZ + palmDeltaZ * closeMovementScale;
+    float targetX = drawerStartCloseX + palmDeltaX * closeMovementScale;
 
     Vector3 local = drawerVisual.localPosition;
-    local.z = targetZ;
+    local.x = targetX;
     drawerVisual.localPosition = local;
   }
 
