@@ -100,8 +100,8 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
     XRHand leftHand = m_HandSubsystem.leftHand;
     XRHand rightHand = m_HandSubsystem.rightHand;
 
-    //LogJointData(leftHand, "[LEFT HAND]");
-    LogJointData(rightHand, "[RIGHT HAND]");
+    // LogJointData(leftHand, "[LEFT HAND]");
+    // LogJointData(rightHand, "[RIGHT HAND]");
   }
 
   void LogJointData(XRHand hand, string handLabel)
@@ -117,10 +117,10 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
     }
   }
 
-  public bool TryGetPalmPose(Handedness hand, out Pose pose)
+  public bool TryGetIndexIntermediateJoint(Handedness hand, out Pose ii_pose)
   {
-    pose = default;
-    /// returns bool and out var that is the pose of palm
+    ii_pose = default;
+
     if (m_HandSubsystem == null || !m_HandSubsystem.running)
     {
       return false;
@@ -129,16 +129,67 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
     XRHand xrHand = hand == Handedness.Left ? m_HandSubsystem.leftHand
                                             : m_HandSubsystem.rightHand;
 
-    if (!xrHand.isTracked)
-        {
-            //Debug.Log("Hand is not tracked!!!!");
-        }
-    // retrieve palmJoint via GetJoint(id) and determine pose
-    var palmJoint = xrHand.GetJoint(XRHandJointID.Palm);
-    var att = palmJoint.TryGetPose(out pose);
-    Debug.Log($"Here is POSE: {pose}");
-    return att;
+    // retrieve index inter. joint
+    var indexInter = xrHand.GetJoint(XRHandJointID.IndexIntermediate);
+    return indexInter.TryGetPose(out ii_pose);
   }
+
+  public bool TryGetMiddleIntermediateJoint(Handedness hand, out Pose mi_pose)
+  {
+    mi_pose = default;
+
+    if (m_HandSubsystem == null || !m_HandSubsystem.running)
+    {
+      return false;
+    }
+
+    XRHand xrHand = hand == Handedness.Left ? m_HandSubsystem.leftHand
+                                            : m_HandSubsystem.rightHand;
+
+    // retrieve index inter. joint
+    var middleInter = xrHand.GetJoint(XRHandJointID.MiddleIntermediate);
+    return middleInter.TryGetPose(out mi_pose);
+  }
+
+  public bool TryGetRingIntermediateJoint(Handedness hand, out Pose ri_pose)
+  {
+    ri_pose = default;
+
+    if (m_HandSubsystem == null || !m_HandSubsystem.running)
+    {
+      return false;
+    }
+
+    XRHand xrHand = hand == Handedness.Left ? m_HandSubsystem.leftHand
+                                            : m_HandSubsystem.rightHand;
+
+    // retrieve index inter. joint
+    var ringInter = xrHand.GetJoint(XRHandJointID.RingIntermediate);
+    return ringInter.TryGetPose(out ri_pose);
+  }
+
+  // public bool TryGetPalmPose(Handedness hand, out Pose pose)
+  // {
+  //   pose = default;
+  //   /// returns bool and out var that is the pose of palm
+  //   if (m_HandSubsystem == null || !m_HandSubsystem.running)
+  //   {
+  //     return false;
+  //   }
+  //
+  //   XRHand xrHand = hand == Handedness.Left ? m_HandSubsystem.leftHand
+  //                                           : m_HandSubsystem.rightHand;
+  //
+  //   if (!xrHand.isTracked)
+  //   {
+  //     // Debug.Log("Hand is not tracked!!!!");
+  //   }
+  //   // retrieve palmJoint via GetJoint(id) and determine pose
+  //   var palmJoint = xrHand.GetJoint(XRHandJointID.Palm);
+  //   var att = palmJoint.TryGetPose(out pose);
+  //   Debug.Log($"Here is POSE: {pose}");
+  //   return att;
+  // }
 
   public bool TryGetHand(Handedness hand, out XRHand xrHand)
   {
@@ -150,6 +201,7 @@ public class HandTrackingManager : MonoBehaviour, IHandTrackingService
     xrHand = hand == Handedness.Left ? m_HandSubsystem.leftHand
                                      : m_HandSubsystem.rightHand;
 
+    // FIX: returns false always
     return xrHand.isTracked;
   }
 
