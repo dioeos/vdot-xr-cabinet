@@ -16,11 +16,11 @@ public class DrawerController : MonoBehaviour
 
   [Tooltip("The movement scale when opening the drawer")]
   [SerializeField]
-  private float openMovementScale = 1.8f;
+  private float openMovementScale = 15f;
 
   [Tooltip("The movement scale when closing the drawer")]
   [SerializeField]
-  private float closeMovementScale = 1.8f;
+  private float closeMovementScale = 15f;
 
   // USE CLAMP TO LIMIT RANGE
 
@@ -91,6 +91,7 @@ public class DrawerController : MonoBehaviour
       case DrawerMode.Opening:
         if (!InColliderRegion(drawerOpenRegion, activeHand, out var openPose))
         {
+          Debug.Log("Ending interaction");
           EndInteraction();
           return;
         }
@@ -110,6 +111,7 @@ public class DrawerController : MonoBehaviour
 
   private void BeginOpenInteraction(Pose mi_pose)
   {
+    Debug.Log("Starting Interaction");
     middleInterStartOpenX = mi_pose.position.x;      // world x at grab
     drawerStartOpenX = drawerVisual.localPosition.x; // local x at grab
   }
