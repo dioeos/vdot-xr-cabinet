@@ -1,26 +1,36 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
-public class ToggleVisibility : MonoBehaviour
+public class HideOnPhysicalTouch : MonoBehaviour
 {
-    bool isVisible = true;
-    Renderer[] renderers;
+    [Header("Object that should appear when this disappears")]
+    public GameObject objectToShow;     // assign in Inspector
 
-    void Start()
-    {
-        renderers = GetComponentsInChildren<Renderer>();
-        SetVisible(isVisible);
-    }
+    private bool hasTriggered = false;  // prevents double-triggering
 
-    public void OnSelectEntered(SelectEnterEventArgs args)
+    void OnTriggerEnter(Collider other)
     {
-        isVisible = !isVisible;
-        SetVisible(isVisible);
-    }
+        if (hasTriggered) return;
 
-    void SetVisible(bool value)
-    {
-        foreach (var r in renderers)
-            r.enabled = value;
+        if (other.CompareTag("Hand"))
+        {
+            hasTriggered = true;
+
+            // Hide THIS object's renderers and colliders
+            foreach (var r in GetComponentsInChildren<Renderer>())
+                r.enabled = false;
+
+            foreach (var c in GetComponentsInChildren<Collider>())
+                c.enabled = false;
+
+            // Show the "hand_" object (tagged or referenced)
+            if (objectToShow != null)
+            {
+                objectToShow.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("HideOnPhysicalTouch: No object assigned to 'objectToShow'");
+            }
+        }
     }
 }

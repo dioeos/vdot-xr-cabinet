@@ -14,6 +14,9 @@ public class CustomAVRHandsVisualizer : MonoBehaviour {
   // HandGameObjects m_LeftHandGameObjects;
   // HandGameObjects m_RightHandGameObjects;
 
+  Vector3 target = new Vector3(-0.089f, 1.631f, 2.1652f);
+  float threshold = 0.10f;
+
   void Start() {
     Debug.Log("Starting AVR Hands script");
     /// iterate & set m_HandSubsystem
@@ -44,8 +47,8 @@ public class CustomAVRHandsVisualizer : MonoBehaviour {
     XRHand left = m_HandSubsystem.leftHand;
     XRHand right = m_HandSubsystem.rightHand;
 
-    Debug.Log($"[XRHandsDebugTest] running={m_HandSubsystem.running}, " +
-              $"leftTracked={left.isTracked}, rightTracked={right.isTracked}");
+    ///Debug.Log($"[XRHandsDebugTest] running={m_HandSubsystem.running}, " +
+              ///$"leftTracked={left.isTracked}, rightTracked={right.isTracked}");
 
     // Try reading a joint pose — palm or index tip
     TryLogJoint(right, XRHandJointID.Palm, "Right Palm");
@@ -61,7 +64,9 @@ public class CustomAVRHandsVisualizer : MonoBehaviour {
 
     XRHandJoint joint = hand.GetJoint(id);
     if (joint.TryGetPose(out Pose pose)) {
-      Debug.Log($"[XRHandsDebugTest] {label}: {pose.position}");
+      ///Debug.Log($"[XRHandsDebugTest] {label}: {pose.position}");
+      float dist = Vector3.Distance(pose.position, target);
+     if (dist < threshold) { Debug.Log("FOUNDDDDD iTTTT"); }
     } else {
       Debug.Log($"[XRHandsDebugTest] {label}: NO POSE");
     }
