@@ -16,11 +16,11 @@ public class DrawerController : MonoBehaviour
 
   [Tooltip("The movement scale when opening the drawer")]
   [SerializeField]
-  private float openMovementScale = 15f;
+  private float openMovementScale;
 
   [Tooltip("The movement scale when closing the drawer")]
   [SerializeField]
-  private float closeMovementScale = 15f;
+  private float closeMovementScale;
 
   [Header("Local X clamp (drawerVisual.localPosition.x)")]
   [Tooltip("Minimum local X (fully closed)")]
@@ -239,7 +239,6 @@ public class DrawerController : MonoBehaviour
         !d_handService.TryGetMiddleIntermediateJoint(hand, out var mi_pose) ||
         !d_handService.TryGetRingIntermediateJoint(hand, out var ri_pose))
     {
-      Debug.LogWarning("Failed to get an intermediate joint");
       return false;
     }
 

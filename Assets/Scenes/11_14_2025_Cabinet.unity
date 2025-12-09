@@ -19022,11 +19022,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrawerController
   drawerOpenRegion: {fileID: 954027337}
   drawerCloseRegion: {fileID: 1748017939}
-  openMovementScale: 15
-  closeMovementScale: 15
+  openMovementScale: 2
+  closeMovementScale: 2
   minLocalX: 0
   maxLocalX: 0.74
-  drawerVisual: {fileID: 954027336}
+  drawerVisual: {fileID: 1126702580}
 --- !u!1 &1136538086
 GameObject:
   m_ObjectHideFlags: 0
