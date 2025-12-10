@@ -160,6 +160,7 @@ public class DoorHandleController : MonoBehaviour
         }
         else if (leftInHandle && d_handService.IsFist(Handedness.Left))
         {
+          Debug.LogWarning("Left in handle");
           handleState = DoorHandleState.Rotating;
           activeHand = Handedness.Left;
           BeginRotateInteraction(openLeftMiddleInter);
@@ -169,9 +170,11 @@ public class DoorHandleController : MonoBehaviour
       case DoorHandleState.Rotating:
         if (!InColliderRegion(doorHandleRegion, activeHand, out var rotatePose))
         {
+          Debug.LogWarning("Hand out of region before rotating, ending!!");
           EndInteraction();
           return;
         }
+        Debug.LogWarning("Rotating");
         UpdateTargetAngleFromInter(rotatePose);
         break;
     }
@@ -247,6 +250,7 @@ public class DoorHandleController : MonoBehaviour
 
     float t = Mathf.InverseLerp(0f, maxTwistDegrees, miDelta);
     float desiredLocalAngle = Mathf.Lerp(localMinAngle, localMaxAngle, t);
+    Debug.LogWarning($"Desired Angle: {desiredLocalAngle}");
 
     // Convert local desired to absolute hinge-space angle
     float desiredAbsAngle = hingeZeroAngle + desiredLocalAngle;
@@ -257,7 +261,7 @@ public class DoorHandleController : MonoBehaviour
 
   private void EndInteraction()
   {
-    handleState = DoorHandleState.MaxPos;
+    handleState = DoorHandleState.MinPos;
 
     float clampedCurrent = Mathf.Clamp(hinge.angle, absMinAngle, absMaxAngle);
     targetAbsAngleDeg = clampedCurrent;
