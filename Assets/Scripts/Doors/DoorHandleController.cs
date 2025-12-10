@@ -7,7 +7,7 @@ internal enum DoorHandleState { MinPos, Rotating, MaxPos }
 public class DoorHandleController : MonoBehaviour
 {
 
-  private DoorHandleState handleState;
+  private DoorHandleState handleState = DoorHandleState.MinPos;
   private Rigidbody rb;
 
   [Header("Rotation Object References")]
@@ -150,7 +150,7 @@ public class DoorHandleController : MonoBehaviour
 
     switch (handleState)
     {
-      case DoorHandleState.MaxPos:
+      case DoorHandleState.MinPos:
         if (rightInHandle && d_handService.IsFist(Handedness.Right))
         {
           Debug.LogWarning("Right in handle!");
