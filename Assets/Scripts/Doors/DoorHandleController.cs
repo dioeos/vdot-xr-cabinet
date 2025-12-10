@@ -153,6 +153,7 @@ public class DoorHandleController : MonoBehaviour
       case DoorHandleState.MaxPos:
         if (rightInHandle && d_handService.IsFist(Handedness.Right))
         {
+          Debug.LogWarning("Right in handle!");
           handleState = DoorHandleState.Rotating;
           activeHand = Handedness.Right;
           BeginRotateInteraction(openRightMiddleInter);
