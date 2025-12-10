@@ -10,8 +10,8 @@ public class CompositionRoot : MonoBehaviour
   [SerializeField]
   DrawerController[] drawers;
 
-  // [SerializeField]
-  // DoorHandleController[] handles;
+  [SerializeField]
+  DoorHandleController[] handles;
 
   void Awake()
   {
@@ -19,9 +19,9 @@ public class CompositionRoot : MonoBehaviour
     {
       drawer.Initialize(handTrackingManager);
     }
-    // foreach (var handle in handles)
-    // {
-    //   handle.Initialize(handTrackingManager);
-    // }
+    foreach (var handle in handles)
+    {
+      handle.Initialize(handTrackingManager);
+    }
   }
 }
