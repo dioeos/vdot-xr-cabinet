@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 8555014341426507138}
   - component: {fileID: 3450897042550730267}
   - component: {fileID: 2525421141999683003}
-  - component: {fileID: 6745354195858326322}
   - component: {fileID: 3042628973850353713}
   - component: {fileID: 5106679880532114771}
   - component: {fileID: 743293378985070099}
@@ -537,19 +536,6 @@ MonoBehaviour:
   m_IntensityMultiplier: 1
   m_FadeInDuration: 0
   m_FadeOutDuration: 0
---- !u!114 &6745354195858326322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428454559636464366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a48d1e81aaaf78409ae1a4c8dc5fa2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TogglePopupOnGrab
-  toggleCanvas: {fileID: 0}
 --- !u!114 &3042628973850353713
 MonoBehaviour:
   m_ObjectHideFlags: 0

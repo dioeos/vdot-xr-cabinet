@@ -60,6 +60,7 @@ namespace VDOTModule.XR.UI
 
     void WasPressed(string buttonText, MeshRenderer _)
     {
+      Debug.LogWarning("Opening Swift UI -[pressed]");
       if (m_SwiftUIWindowOpen)
       {
         CloseSwiftUIWindow("ControlPanel");
