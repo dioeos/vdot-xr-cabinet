@@ -1,0 +1,15 @@
+// This custom view is referenced by SwiftUIInjectedScene to provide the body of a WindowGroup
+
+import Foundation
+import SwiftUI
+import UnityFramework
+import PolySpatialRealityKit
+
+struct ControlPanelContentView: View {
+    
+    var body: some View {
+        VStack {
+            Text("VDOT Traffic Cabinet XR Tool")
+        }
+    }
+}
